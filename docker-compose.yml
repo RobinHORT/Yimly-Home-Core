@@ -1,0 +1,42 @@
+services:
+  homeassistant:
+    container_name: yimly-homeassistant
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yimly-homeassistant:latest
+    restart: unless-stopped
+    privileged: false
+    environment:
+      - TZ=${TZ:-UTC}
+      - NODE_ENV=production
+      - HA_CONFIG_DIR=/config
+      - PORT=3000
+      - HA_PORT=8123
+      - YIMLY_ACCENT_COLOR=#FF4FA3
+    volumes:
+      # Persistent storage: configuration, auth, users, recorder SQLite DB, device/entity registries
+      - ${HA_CONFIG_VOLUME:-./config}:/config
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      # External ports for Home Assistant and Yimly Interface
+      - "${HA_PORT:-8123}:8123"
+      - "${YIMLY_PORT:-3000}:3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8123/manifest.json"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - yimly_internal
+      # Cloudflare Tunnel external Docker network
+      - cloudflare_network
+
+networks:
+  yimly_internal:
+    driver: bridge
+  # Configurable external network for Cloudflare Tunnel integration
+  cloudflare_network:
+    name: ${CLOUDFLARE_NETWORK:-cloudflare_tunnel_net}
+    external: true

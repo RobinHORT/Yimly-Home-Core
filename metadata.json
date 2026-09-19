@@ -1,0 +1,7 @@
+{
+  "name": "Yimly Home Assistant Server",
+  "description": "Real Home Assistant Core server with custom Yimly location & device tracking interface, official Companion App support, Docker deployment, and Cloudflare integration.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

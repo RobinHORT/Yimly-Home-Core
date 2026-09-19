@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.auth",
+  "data": {
+    "users": [
+      {
+        "id": "daf52a393e2b40eaae5dcbe3fb9cd2e6",
+        "name": "Home Assistant Admin",
+        "is_owner": true,
+        "is_active": true,
+        "system_generated": false,
+        "group_ids": [
+          "system-admin"
+        ],
+        "credentials": [
+          {
+            "auth_provider_type": "homeassistant",
+            "auth_provider_id": null
+          }
+        ]
+      }
+    ],
+    "refresh_tokens": [
+      {
+        "id": "79ff8eeb0eae71948c71be068397177a39b2b24e3a6f133e46d3ad374f63965e7eb611807386b815407c104a7f4cf95f",
+        "user_id": "daf52a393e2b40eaae5dcbe3fb9cd2e6",
+        "client_id": "http://localhost:3000/",
+        "created_at": "2026-09-18T23:11:28.123Z",
+        "access_token_expiration": 1800,
+        "token_type": "normal",
+        "jwt_key": "79ff8eeb0eae71948c71be068397177a39b2b24e3a6f133e46d3ad374f63965e7eb611807386b815407c104a7f4cf95f"
+      },
+      {
+        "id": "e4e7b92a69c29cc477afda2e8a33f19a507f3b5bbfde0f14ebf3cec549a2dcda0dc1c72b9f0addf69362b394c5d6064b",
+        "user_id": "daf52a393e2b40eaae5dcbe3fb9cd2e6",
+        "client_id": "http://localhost:3000/",
+        "created_at": "2026-09-18T23:11:37.024Z",
+        "access_token_expiration": 1800,
+        "token_type": "normal",
+        "jwt_key": "e4e7b92a69c29cc477afda2e8a33f19a507f3b5bbfde0f14ebf3cec549a2dcda0dc1c72b9f0addf69362b394c5d6064b"
+      }
+    ]
+  }
+}

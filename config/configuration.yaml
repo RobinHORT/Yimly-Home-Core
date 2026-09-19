@@ -1,0 +1,58 @@
+# Home Assistant Core Configuration
+# Yimly Server Integration
+
+homeassistant:
+  name: Yimly Home
+  latitude: 37.7749
+  longitude: -122.4194
+  elevation: 10
+  unit_system: metric
+  time_zone: UTC
+  currency: USD
+
+# Core APIs and WebSockets
+api:
+websocket_api:
+
+# HTTP Server Configuration with trusted proxy for Docker / Cloudflare / Preview
+http:
+  server_port: 8123
+  server_host: 0.0.0.0
+  cors_allowed_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8123"
+    - "http://127.0.0.1:3000"
+    - "http://127.0.0.1:8123"
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+
+# Person Integration
+person:
+
+# Webhook engine for Companion App
+webhook:
+
+# Mobile App Companion Integration for official iOS/Android apps
+mobile_app:
+
+# Persistent SQLite Recorder & History
+recorder:
+  purge_keep_days: 30
+  commit_interval: 1
+
+history:
+logbook:
+system_health:
+
+# Geolocation Zones
+zone:
+  - name: Home
+    latitude: 37.7749
+    longitude: -122.4194
+    radius: 100
+    icon: mdi:home

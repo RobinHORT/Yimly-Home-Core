@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.auth_provider.homeassistant",
+  "data": {
+    "users": [
+      {
+        "username": "admin",
+        "password": "pbkdf2$100000$9a3dfd32e9550999883645ccc6d75a83$7c0d9de9b8d329211cb34057def6d14e028604a530b9ecce85b9db2d8202dcd5f1d650e8cbc65cf858234278262471b9228fc8cc2ec9b3377f66ddeb0e079b53",
+        "is_active": true,
+        "user_id": "daf52a393e2b40eaae5dcbe3fb9cd2e6"
+      }
+    ]
+  }
+}
